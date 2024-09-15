@@ -3,20 +3,30 @@
  * @see https://v0.dev/t/17kzxVu2URM
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
-"use client";
-import { useActionState } from "react";
-import React, { useState } from "react";
-import Link from "next/link";
-import { Button } from "@/components/ui/button"; // Import the icon
 
-export default function Component() {
+/** Add fonts into your Next.js project:
+
+
+inter({
+  subsets: ['latin'],
+  display: 'swap',
+})
+
+To read more about using these font, please visit the Next.js documentation:
+- App Directory: https://nextjs.org/docs/app/building-your-application/optimizing/fonts
+- Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
+**/
+import { Button } from "@/components/ui/button"
+import { Inter } from 'next/font/google'
+
+export function welcome1() {
   return (
     <div className="flex items-center justify-center h-screen bg-background">
       <div className="relative w-[320px] h-[640px] bg-white rounded-2xl shadow-lg border border-foreground">
         <div className="flex flex-col items-center justify-center h-full px-8">
           <div className="animate-pulse">
             <div className="bg-[#FFCDD2] rounded-full p-6 mb-4 border border-foreground">
-              <BrainIcon className="w-12 h-12 text-black font-body" /> {/* Apply font-body class */}
+              <BrainIcon className="w-12 h-12 text-black" />
             </div>
           </div>
           <h1 className="text-8xl font-extrabold text-foreground leading-tight text-center uppercase">
@@ -24,19 +34,15 @@ export default function Component() {
             <br />
             LAB
           </h1>
-          <p className="mt-4 text-sm text-muted-foreground font-body"> {/* Apply font-body class */}
-            Your very own Temple of reason.
-          </p>
-          <Link href="/readytoroll">
-            <Button className="mt-8 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors">
-              Start
-            </Button>
-          </Link>
+          <p className="mt-4 text-sm text-muted-foreground">Your very own Temple of reason.</p>
+          <Button className="mt-8 bg-gradient-to-r from-black to-gray-800 text-[#FF6B6B] hover:bg-gradient-to-r hover:from-gray-900 hover:to-black transition-colors animate-pulse rounded-full px-8 py-4">
+            Start
+          </Button>
         </div>
         <div className="absolute bottom-0 left-0 w-full h-1 bg-foreground rounded-b-2xl" />
       </div>
     </div>
-  );
+  )
 }
 
 function BrainIcon(props: any) {

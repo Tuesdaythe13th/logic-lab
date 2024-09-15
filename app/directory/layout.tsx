@@ -2,19 +2,26 @@
 // Learn more: https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#root-layout-required
 import { Inter } from 'next/font/google'
 import { cn } from '@/lib/utils'
-import './globals.css'
+import {  HomeIcon,  // Import the specific Lucide icon you want
+          // ... other Lucide icons you use 
+        } from 'lucide-react'; 
+// import './globals.css' 
+// import type { Config } from 'tailwindcss'
+// import type { Metadata } from 'next'
+// This is the root layout component for your Next.js app.
+// Learn more: https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#root-layout-required
 
 const fontHeading = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-heading',
-})
+});
 
 const fontBody = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-body',
-})
+});
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -26,8 +33,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           fontBody.variable
         )}
       >
+        {/* Use your Lucide icon here */}
+        <HomeIcon /> {/* Example of using the HomeIcon */} 
         {children}
       </body>
     </html>
-  )
+  );
 }
