@@ -1,10 +1,16 @@
-'use client'
+/**
+ * v0 by Vercel.
+ * @see https://v0.dev/t/cpEbo3FSAH3
+ * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
+ */
+"use client";
 
+import Link from "next/link";
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Battery, Wifi, Signal, Star, ChevronDown, ChevronUp } from 'lucide-react'
 
-export function WelcomeScreen() {
+export default function Component() {
   const [showHistory, setShowHistory] = useState(false)
 
   const historicalEvents = [
@@ -87,19 +93,21 @@ export function WelcomeScreen() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Go back to my last activity
+            <Link href="/directory">
+              Go back to my last activity
+            </Link>
           </motion.button>
-
           <motion.button
             className="w-full bg-gradient-to-r from-pink-400 to-pink-600 text-white py-3 rounded-lg font-semibold"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Start a new activity in Logic Lab
+            <Link href="/directory">
+              Start a new activity in Logic Lab
+            </Link>
           </motion.button>
         </div>
       </div>
-
       {/* Home indicator */}
       <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gray-300 rounded-full"></div>
     </div>
