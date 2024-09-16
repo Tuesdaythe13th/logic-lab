@@ -1,11 +1,22 @@
 "use client";
 
 import { useState, useEffect } from 'react'
-import { Mic, Send, Battery, Wifi, Signal, ChevronLeft, ChevronRight, Inbox } from 'lucide-react'
+import { 
+  Mic, 
+  Send, 
+  Battery, 
+  Wifi, 
+  Signal, 
+  ChevronLeft, 
+  ChevronRight, 
+  Inbox 
+} from 'lucide-react'
 
 export default function Component() {
   const [message, setMessage] = useState('')
-  const [chatMessages, setChatMessages] = useState([])
+  const [chatMessages, setChatMessages] = useState<
+    { text: string; sender: string }[]
+  >([])
   const [currentTime, setCurrentTime] = useState('')
   const [carouselIndex, setCarouselIndex] = useState(0)
 
@@ -30,7 +41,9 @@ export default function Component() {
       setMessage('')
       // Simulate a response
       setTimeout(() => {
-        setChatMessages(prev => [...prev, { text: "This is a sample response.", sender: 'bot' }])
+        setChatMessages(prev => {
+          return [...prev, { text: "This is a sample response.", sender: 'bot' }]
+        })
       }, 1000)
     }
   }
@@ -39,7 +52,7 @@ export default function Component() {
     console.log('Microphone clicked')
   }
 
-  const handleCarouselChange = (direction) => {
+  const handleCarouselChange = (direction: 'prev' | 'next') => { // Specify the type
     setCarouselIndex(prevIndex => {
       if (direction === 'next') {
         return (prevIndex + 1) % professions.length
