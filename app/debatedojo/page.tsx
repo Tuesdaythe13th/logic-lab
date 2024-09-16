@@ -1,12 +1,10 @@
 "use client"
 
-import { useRouter } from "next/navigation";
-import Link from "next/link";
 import { useState } from 'react'
-import { Send, Radio, MessageSquare, Mic, PlayCircle, PauseCircle, FileText, Award, Cast } from 'lucide-react'
+import { Send, MessageSquare, Mic, PlayCircle, PauseCircle, FileText, Award, Cast } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Progress } from "@/components/ui/progress"
+import React from 'react';
 
 interface AnimatedIconProps {
   icon: React.ComponentType<any>;

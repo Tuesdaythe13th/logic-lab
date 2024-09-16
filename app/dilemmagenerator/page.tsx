@@ -1,8 +1,7 @@
 "use client";
-
+import React from 'react';
 import { useState } from 'react'
 import { Battery, Wifi, Signal, Mic, Keyboard, Power } from 'lucide-react'
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function Component() {
@@ -87,7 +86,7 @@ export default function Component() {
           <Link href="/dilemmanavigation">
             {/* Let's Navigate Button */}
             <button className="bg-gradient-to-r from-pink-200 to-pink-400 text-black font-semibold rounded-lg p-4 text-center hover:shadow-lg transition-all duration-300 transform hover:scale-105 mt-2 mb-4">
-              Let's Navigate
+              Lets Navigate
             </button>
           </Link>
           </div>

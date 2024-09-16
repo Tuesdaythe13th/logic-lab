@@ -2,12 +2,11 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Battery, Wifi, Signal, Mic, Square, ChevronDown } from 'lucide-react'
-import Lottie from 'lottie-react'
+import { Battery, Wifi, Signal, Mic, Square } from 'lucide-react'
 
 export default function Component() {
   const [timeLeft, setTimeLeft] = useState(300) // 5 minutes in seconds
-  const [navigationMethod, setNavigationMethod] = useState<'voice' | 'text'>('text')
+  const [navigationMethod,] = useState<'voice' | 'text'>('text')
   const [isRecording, setIsRecording] = useState(false)
   const [inputText, setInputText] = useState('')
   const [timerStopped, setTimerStopped] = useState(false)

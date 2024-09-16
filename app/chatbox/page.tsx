@@ -11,6 +11,7 @@ import {
   ChevronRight, 
   Inbox 
 } from 'lucide-react'
+import React from 'react';
 
 export default function Component() {
   const [message, setMessage] = useState('')
