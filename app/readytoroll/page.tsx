@@ -5,7 +5,6 @@
  */
 "use client";
 
-import React, { useState } from "react";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -76,7 +75,7 @@ export default function ReadyToRoll() {
                   placeholder="Password"
                   className="bg-transparent text-foreground placeholder:text-foreground text-[12px]"
                 />
-                <Link href="/directory">
+                <Link href="/welcomescreen">
                   <Button
                     type="submit"
                     onClick={handleRedirect} // Call the redirect function on button click
@@ -96,7 +95,7 @@ export default function ReadyToRoll() {
   );
 }
 
-function ChromeIcon(props: any) {
+function ChromeIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -119,7 +118,7 @@ function ChromeIcon(props: any) {
   );
 }
 
-function GithubIcon(props: any) {
+function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -139,7 +138,7 @@ function GithubIcon(props: any) {
   );
 }
 
-function MailIcon(props: any) {
+function MailIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -159,7 +158,7 @@ function MailIcon(props: any) {
   );
 }
 
-function PowerIcon(props: any) {
+function PowerIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -179,7 +178,7 @@ function PowerIcon(props: any) {
   );
 }
 
-function RocketIcon(props: any) {
+function RocketIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}

@@ -51,13 +51,13 @@ export default function Component() {
             <Star size={48} className="text-pink-300 mb-4" />
           </motion.div>
           <h1 className="text-2xl font-bold text-center leading-tight">
-            Glad you're back,<br />Tuesday!
+            Glad you&apos;re back,<br />Tuesday!
           </h1>
         </motion.div>
 
         {/* Quote */}
         <p className="text-center text-gray-600 italic mb-8 px-4">
-          "Every existing thing is born without reason, prolongs itself out of weakness, and dies by chance."
+          &quot;Every existing thing is born without reason, prolongs itself out of weakness, and dies by chance.&quot;
           <br />— JEAN-PAUL SARTRE
         </p>
 
