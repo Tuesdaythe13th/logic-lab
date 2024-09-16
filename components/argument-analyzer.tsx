@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from 'react'
-import { Brain, Mic, Send, AlertTriangle, UserX, XCircle } from 'lucide-react'
+import { Brain, Mic, Send, AlertTriangle, UserX, XCircle, LucideIcon } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -13,7 +13,13 @@ const AnimatedBrain = () => (
   </div>
 )
 
-const GlowingButton = ({ icon: Icon, text, onClick }) => (
+interface GlowingButtonProps {
+  icon: LucideIcon;  // Set the type for the icon as a Lucide icon component
+  text: string;
+  onClick: () => void;
+}
+
+const GlowingButton = ({ icon: Icon, text, onClick }: GlowingButtonProps) => (
   <Button
     variant="outline"
     className="bg-white hover:bg-pink-100 text-gray-700 border-pink-300 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:shadow-pink-200"
