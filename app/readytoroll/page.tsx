@@ -15,7 +15,6 @@ export default function ReadyToRoll() {
   const router = useRouter();
 
   const handleRedirect = () => {
-    // Replace this with the actual URL or logic to redirect
     router.push("/workspaces/thirdtry/app/directory"); // Replace with the correct path
   };
 
@@ -35,7 +34,7 @@ export default function ReadyToRoll() {
           </div>
           <div className="mt-4 w-full space-y-2">
             <div className="group relative">
-              <div className="bg-[#FF6B6B] rounded-full p-3 border border-foreground flex items-center justify-center group-hover:bg-[#e65858] transition-colors">
+              <div className="bg-gradient-to-br from-pink-300 to-pink-400 rounded-full p-3 border border-foreground flex items-center justify-center group-hover:bg-pink-350 transition-colors">
                 <ChromeIcon className="w-4 h-4 mr-2 text-white" />
                 <span className="text-white text-[10px]">
                   Sign in with Google
@@ -44,7 +43,7 @@ export default function ReadyToRoll() {
               <p className="mt-1 text-[10px] text-muted-foreground" />
             </div>
             <div className="group relative">
-              <div className="bg-[#FF6B6B] rounded-full p-3 border border-foreground flex items-center justify-center group-hover:bg-[#e65858] transition-colors">
+              <div className="bg-gradient-to-br from-pink-300 to-pink-400 rounded-full p-3 border border-foreground flex items-center justify-center group-hover:bg-pink-350 transition-colors">
                 <GithubIcon className="w-4 h-4 mr-2 text-white" />
                 <span className="text-white text-[10px]">
                   Sign in with GitHub
@@ -53,7 +52,7 @@ export default function ReadyToRoll() {
               <p className="mt-1 text-[10px] text-muted-foreground" />
             </div>
             <div className="group relative">
-              <div className="bg-[#FF6B6B] rounded-full p-3 border border-foreground flex items-center justify-center group-hover:bg-[#e65858] transition-colors">
+              <div className="bg-gradient-to-br from-pink-300 to-pink-400 rounded-full p-3 border border-foreground flex items-center justify-center group-hover:bg-pink-350 transition-colors">
                 <MailIcon className="w-4 h-4 mr-2 text-white" />
                 <span className="text-white text-[10px]">
                   Sign in with Email
@@ -63,28 +62,28 @@ export default function ReadyToRoll() {
             </div>
           </div>
           <div className="mt-4 w-full">
-            <form className="bg-foreground rounded-2xl p-3 border border-[#FF6B6B]">
+            <form className="bg-white rounded-2xl p-3 border border-foreground">
               <div className="space-y-2">
                 <Input
                   id="username"
                   type="text"
                   placeholder="Username"
-                  className="bg-transparent text-white placeholder:text-white text-[12px]"
+                  className="bg-transparent text-foreground placeholder:text-foreground text-[12px]"
                 />
                 <Input
                   id="password"
                   type="password"
                   placeholder="Password"
-                  className="bg-transparent text-white placeholder:text-white text-[12px]"
+                  className="bg-transparent text-foreground placeholder:text-foreground text-[12px]"
                 />
                 <Link href="/directory">
                   <Button
                     type="submit"
                     onClick={handleRedirect} // Call the redirect function on button click
-                    className="w-full h-7 flex items-center justify-center bg-[#FF6B6B] text-white rounded-md hover:bg-[#e65858] transition-colors text-[10px]"
+                    className="w-full h-7 flex items-center justify-center bg-black text-white rounded-md hover:bg-gray-700 transition-colors text-[10px]"
                   >
                     <RocketIcon className="w-3 h-3 mr-1 animate-[bounce_1s_ease-in-out_infinite]" />
-                    Sign In
+                    Lets Go
                   </Button>
                 </Link>
               </div>
