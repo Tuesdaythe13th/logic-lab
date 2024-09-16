@@ -3,7 +3,6 @@
  * It is recommended to use the `@tailwind base;`, `@tailwind components;`, and `@tailwind utilities;` directives
  * to include Tailwind CSS styles.
  */
-
  @tailwind base;
  @tailwind components;
  @tailwind utilities;

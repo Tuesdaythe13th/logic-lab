@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input"
 import React from 'react';
 
 interface AnimatedIconProps {
-  icon: React.ComponentType<any>;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   animation: string;
   className?: string;
 }
@@ -25,7 +25,7 @@ const GradientBox = ({ children }: { children: React.ReactNode }) => (
 )
 
 interface ControlButtonProps {
-  icon: React.ComponentType<any>;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   text: string;
   animation: string;
   onClick: () => void;

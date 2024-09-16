@@ -1,11 +1,11 @@
-'use client'
+"use client"
 
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useEffect, useCallback } from 'react'
+import { motion } from 'framer-motion'
 import { Battery, Wifi, Signal, Plus, Save, Search, Bold, Italic, Underline, List, ChevronLeft, ChevronRight, Book } from 'lucide-react'
 import Confetti from 'react-confetti'
 
-export function MyNotebook() {
+export default function Component() {
   const [notes, setNotes] = useState([
     { id: 1, title: 'Research on AI Ethics', content: 'AI ethics is a complex field...', category: 'Research' },
     { id: 2, title: 'New Product Idea', content: 'A smart device that...', category: 'Ideas' },
@@ -19,6 +19,14 @@ export function MyNotebook() {
   const [showSavedNotes, setShowSavedNotes] = useState(false)
   const [showConfetti, setShowConfetti] = useState(false)
 
+  const handleSave = useCallback(() => {
+    const updatedNotes = notes.map(note => 
+      note.id === currentNote.id ? currentNote : note
+    )
+    setNotes(updatedNotes)
+    setIsEditing(false)
+  }, [currentNote, notes])
+
   useEffect(() => {
     const autoSaveInterval = setInterval(() => {
       if (isEditing) {
@@ -27,7 +35,7 @@ export function MyNotebook() {
     }, 30000) // Auto-save every 30 seconds
 
     return () => clearInterval(autoSaveInterval)
-  }, [isEditing, currentNote])
+  }, [isEditing, handleSave])
 
   const handleNewNote = () => {
     const newNote = { id: notes.length + 1, title: 'New Note', content: '', category: 'Research' }
@@ -35,14 +43,6 @@ export function MyNotebook() {
     setCurrentNote(newNote)
     setCurrentNoteIndex(notes.length)
     setIsEditing(true)
-  }
-
-  const handleSave = () => {
-    const updatedNotes = notes.map(note => 
-      note.id === currentNote.id ? currentNote : note
-    )
-    setNotes(updatedNotes)
-    setIsEditing(false)
   }
 
   const handleNoteNavigation = (direction: 'prev' | 'next') => {
@@ -55,12 +55,10 @@ export function MyNotebook() {
   }
 
   const applyFormatting = (format: 'bold' | 'italic' | 'underline' | 'list') => {
-    // This is a simplified version. In a real app, you'd use a rich text editor library.
     setCurrentNote({ ...currentNote, content: `[${format}]${currentNote.content}[/${format}]` })
   }
 
   const handleSearch = () => {
-    // Simulating a Perplexity API call
     setPerplexityAnswer(`Here's what I found about "${searchQuery}": ...`)
   }
 
