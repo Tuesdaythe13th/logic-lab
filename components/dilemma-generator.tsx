@@ -82,7 +82,7 @@ export function DilemmaGenerator() {
 
         {/* Let's Navigate Button */}
         <button className="bg-gradient-to-r from-pink-200 to-pink-400 text-black font-semibold rounded-lg p-4 text-center hover:shadow-lg transition-all duration-300 transform hover:scale-105 mt-2 mb-4">
-          Let's Navigate
+          Let&apos;s Navigate
         </button>
       </div>
 
