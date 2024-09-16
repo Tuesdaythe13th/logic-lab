@@ -1,18 +1,13 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/cpEbo3FSAH3
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
 "use client";
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
+// Ensure the props parameter has an explicit type
 export default function Component() {
   return (
-    <div className="flex flex-col min-h-screen bg-white">
-      <div className="bg-black h-20 flex items-center justify-center  
-                    relative z-10 max-w-sm mx-auto">
+    <div className="flex flex-col min-h-screen">
+      <header className="bg-black h-16 flex items-center justify-center">
         <h1 className="text-3xl font-bold text-white">Logic Lab</h1>
         <div className="ml-8 flex items-center gap-4">
           <InboxIcon className="w-6 h-6 text-white" />
@@ -21,34 +16,38 @@ export default function Component() {
           <ShareIcon className="w-6 h-6 text-white" />
           <CodeIcon className="w-6 h-6 text-white" />
         </div>
-      </div>
+      </header>
 
-      <main className="flex-1 bg-white flex flex-col items-center justify-center p-8 gap-8 max-w-sm mx-auto">
+      <main className="flex-1 bg-white flex flex-col items-center justify-center p-8 gap-8">
         <div className="grid grid-cols-1 gap-4 justify-center">
-          <MessageCircleIcon className="w-6 h-6 text-white mb-2 animate-bounce" />
           <Link href="/debatedojo">
             <div className="bg-gradient-to-br from-[#FFB6C1] to-[#FFC0CB] rounded-xl shadow-lg border-2 border-foreground p-4 flex flex-col items-center justify-center animate-pulse">
+              <ActivityIcon className="w-6 h-6 text-white mb-2 animate-bounce" />
               <h3 className="text-lg font-bold text-white">Debate Dojo</h3>
             </div>
           </Link>
+
           <Link href="/dilemmagenerator">
             <div className="bg-gradient-to-br from-[#FFB6C1] to-[#FFC0CB] rounded-xl shadow-lg border-2 border-foreground p-4 flex flex-col items-center justify-center animate-pulse">
               <LightbulbIcon className="w-6 h-6 text-white mb-2 animate-bounce" />
               <h3 className="text-lg font-bold text-white">Dilemma Generator</h3>
             </div>
           </Link>
+
           <Link href="/logiclabAA">
             <div className="bg-gradient-to-br from-[#FFB6C1] to-[#FFC0CB] rounded-xl shadow-lg border-2 border-foreground p-4 flex flex-col items-center justify-center animate-pulse">
               <CodeIcon className="w-6 h-6 text-white mb-2 animate-bounce" />
-              <h3 className="text-lg font-bold text-white">Argument Analyzer</h3>
+              <h3 className="text-lg font-bold text-white">Logic Lab</h3>
             </div>
           </Link>
+
           <Link href="/ideafarm">
             <div className="bg-gradient-to-br from-[#FFB6C1] to-[#FFC0CB] rounded-xl shadow-lg border-2 border-foreground p-4 flex flex-col items-center justify-center animate-pulse">
               <FeatherIcon className="w-6 h-6 text-white mb-2 animate-bounce" />
               <h3 className="text-lg font-bold text-white">Idea Farm</h3>
             </div>
           </Link>
+
           <Link href="/chatbox">
             <div className="bg-gradient-to-br from-[#FFB6C1] to-[#FFC0CB] rounded-xl shadow-lg border-2 border-foreground p-4 flex flex-col items-center justify-center animate-pulse">
               <MessageCircleIcon className="w-6 h-6 text-white mb-2 animate-bounce" />
@@ -57,27 +56,59 @@ export default function Component() {
           </Link>
         </div>
 
-        {/* Correct Link for "Go to my notebook" */}
         <Link href="/mynotebook">
-          <Button className="bg-white text-black rounded-full px-8 py-3 animate-pulse text-lg mt-4" >
+          <Button className="bg-white text-black rounded-full px-8 py-3 animate-pulse text-lg mt-4">
             Go to my notebook
           </Button>
         </Link>
       </main>
-  
     </div>
   );
 }
 
+function ActivityIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2" />
+    </svg>
+  );
+}
 
 function CloudLightningIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <path d="M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973" />
       <path d="m13 12-3 5h4l-3 5" />
     </svg>
   );
 }
+
+// Remaining icon components (CodeIcon, FeatherIcon, etc.) remain the same
+
+
+// The other icon components (CodeIcon, FeatherIcon, InboxIcon, LightbulbIcon, MessageCircleIcon, ShareIcon) remain the same
 
 function CodeIcon(props: React.SVGProps<SVGSVGElement>) {
   return (

@@ -1,45 +1,46 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Battery, Wifi, Signal, Heart, Volume2, CheckSquare, FileText, ChevronDown, ChevronUp, Lightbulb, MessageSquare } from 'lucide-react'
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Battery, Wifi, Signal, Heart, Volume2, CheckSquare, FileText, ChevronDown, ChevronUp, Lightbulb, MessageSquare } from 'lucide-react';
+import Link from 'next/link'; 
 
-export function IdeaFarm() {
-  const [expandedSection, setExpandedSection] = useState<string | null>(null)
+export default function Component() {
+  const [expandedSection, setExpandedSection] = useState<string | null>(null);
 
   const toggleSection = (section: string) => {
-    setExpandedSection(expandedSection === section ? null : section)
-  }
+    setExpandedSection(expandedSection === section ? null : section);
+  };
 
   const feedbackItems = [
     { icon: Heart, text: "Improve your empathy" },
     { icon: Volume2, text: "Less aggressive tone suggested" },
     { icon: CheckSquare, text: "Use fewer red herring arguments" },
     { icon: CheckSquare, text: "Use fewer ad hominem attacks" },
-  ]
+  ];
 
   const improvements = [
     "Facts have increased in accuracy.",
     "Confidence scores in spoken arguments have improved!",
-  ]
+  ];
 
   const savedDilemmas = [
     { title: "Trolley Problem", preview: "You see a runaway trolley moving toward five tied-up people lying on the tracks..." },
     { title: "Lying to Protect", preview: "Your friend asks you if their new haircut looks good, but you don't like it..." },
     { title: "Whistleblower's Dilemma", preview: "You've discovered unethical practices in your workplace..." },
-  ]
+  ];
 
   const savedArguments = [
     { title: "Utilitarianism vs. Deontology", preview: "Comparing the ethical frameworks of utilitarianism and deontology..." },
     { title: "Climate Change Action", preview: "Arguing for immediate action on climate change based on scientific evidence..." },
     { title: "AI Rights", preview: "Exploring the potential rights and ethical considerations for artificial intelligence..." },
-  ]
+  ];
 
   return (
-    <div className="w-[375px] h-[812px] bg-white rounded-[60px] overflow-hidden shadow-xl border-[14px] border-black relative">
+    <div className="w-[375px] h-[812px] bg-white rounded-[60px] overflow-hidden shadow-xl border-[14px] border-black relative flex flex-col justify-center items-center">
       {/* iPhone-style notch */}
       <div className="absolute top-0 inset-x-0 h-6 bg-black rounded-b-3xl"></div>
-      
+
       {/* Status bar */}
       <div className="relative z-10 flex justify-between items-center px-6 pt-2 text-black text-sm">
         <div className="flex items-center space-x-2">
@@ -196,17 +197,19 @@ export function IdeaFarm() {
         </div>
 
         {/* Open Notebook Button */}
-        <motion.button
-          className="w-full bg-black text-white p-4 rounded-lg shadow-md font-bold text-lg"
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-        >
-          Open my notebook
-        </motion.button>
-      </div>
+        <Link href="/mynotebook">
+          <motion.button
+            className="w-full bg-black text-white p-4 rounded-lg shadow-md font-bold text-lg"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            Open my notebook
+          </motion.button>
+        </Link>
 
-      {/* Home indicator */}
-      <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gray-300 rounded-full"></div>
+        {/* Home indicator */}
+        <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gray-300 rounded-full"></div>
+      </div>
     </div>
-  )
+  );
 }
