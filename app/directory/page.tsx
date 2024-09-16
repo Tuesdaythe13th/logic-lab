@@ -42,7 +42,7 @@ export default function Component() {
           <Link href="/logiclabAA">
             <div className="bg-gradient-to-br from-[#FFB6C1] to-[#FFC0CB] rounded-xl shadow-lg border-2 border-foreground p-4 flex flex-col items-center justify-center animate-pulse">
               <CodeIcon className="w-6 h-6 text-white mb-2 animate-bounce" />
-              <h3 className="text-lg font-bold text-white">Logic Lab</h3>
+              <h3 className="text-lg font-bold text-white">Argument Analyzer</h3>
             </div>
           </Link>
           <Link href="/ideafarm">
